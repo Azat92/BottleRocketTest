@@ -1,0 +1,25 @@
+//
+//  BottleRocketTestPrefix.pch
+//  BottleRocketTest
+//
+//  Created by Azat Almeev on 22.02.16.
+//  Copyright © 2016 Azat Almeev. All rights reserved.
+//
+
+#import <MYHelpers.h>
+#import <BlocksKit.h>
+#import <UIImageView+WebCache.h>
+#import <MBProgressHUD.h>
+#import "EXTScope.h"
+
+static inline NSError *NSErrorMakeDict(NSDictionary *userInfo)
+{
+    return [NSError errorWithDomain:@"world" code:1 userInfo:userInfo];
+}
+
+static inline NSError *NSErrorMakeString(NSString *detail)
+{
+    return NSErrorMakeDict(@{ NSLocalizedDescriptionKey : detail });
+}
+
+#define NSErrorMakeFormat(frmt, ...) NSErrorMakeString([NSString stringWithFormat:frmt, __VA_ARGS__])

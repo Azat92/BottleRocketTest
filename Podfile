@@ -1,0 +1,5 @@
+pod 'BlocksKit'
+pod 'SDWebImage'
+pod 'Mantle'
+pod 'MYHelpers', :podspec => 'https://raw.githubusercontent.com/AlexandrGraschenkov/MYHelpers/master/MYHelpers.podspec.json'
+pod 'MBProgressHUD'
