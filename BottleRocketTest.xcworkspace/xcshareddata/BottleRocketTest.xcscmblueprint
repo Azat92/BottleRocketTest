@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "B80ED93769633CAE7161A046D16E6129EB693569",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "B80ED93769633CAE7161A046D16E6129EB693569" : 0,
+    "880EB74B45CF488308DFB65177E88EDDC88C4EBC" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "F9A9853D-2078-481F-9F45-70F1E24ADB00",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "B80ED93769633CAE7161A046D16E6129EB693569" : "BottleRocketTest\/",
+    "880EB74B45CF488308DFB65177E88EDDC88C4EBC" : "BottleRocketTest\/libextobjc\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "BottleRocketTest",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "BottleRocketTest.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jspahrsummers\/libextobjc",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "880EB74B45CF488308DFB65177E88EDDC88C4EBC"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Azat92\/BottleRocketTest",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B80ED93769633CAE7161A046D16E6129EB693569"
+    }
+  ]
+}

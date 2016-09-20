@@ -8,6 +8,8 @@
 
 #import "BRTCustomTabBar.h"
 
+static CGFloat const TAB_BAR_HEIGHT = 50;
+
 @implementation BRTCustomTabBar
 
 + (void)load
@@ -18,7 +20,7 @@
 - (CGSize)sizeThatFits:(CGSize)size
 {
     CGSize sizeThatFits = [super sizeThatFits:size];
-    sizeThatFits.height = 50;
+    sizeThatFits.height = TAB_BAR_HEIGHT;
     return sizeThatFits;
 }
 

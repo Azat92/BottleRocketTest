@@ -18,6 +18,12 @@
 
 @implementation BRTLoadingView
 
+- (void)setErrorWithStatusText:(NSString *)text
+{
+    self.mode = BRTLoadingViewModeError;
+    self.statusText = text;
+}
+
 - (void)setMode:(BRTLoadingViewMode)mode
 {
     _mode = mode;
@@ -49,7 +55,7 @@
 - (IBAction)retryButtonDidClick:(id)sender
 {
     self.mode = BRTLoadingViewModeLoading;
-    [self.delegate loadingViewDidCLickRetryButton:self];
+    [self.delegate loadingViewDidClickRetryButton:self];
 }
 
 + (instancetype)viewFromXib

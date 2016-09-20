@@ -6,9 +6,9 @@
 //  Copyright © 2016 Azat Almeev. All rights reserved.
 //
 
-#import "BRTRestaurnatsManager.h"
+#import "BRTRestaurantsManager.h"
 
-@implementation BRTRestaurnatsManager
+@implementation BRTRestaurantsManager
 
 - (NSString *)loadingPath
 {

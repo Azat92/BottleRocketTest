@@ -8,19 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		003D1ACFDADE5DD252AE40E8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E488C9787E0EEAB5848E1DC /* libPods.a */; };
+		AA1CBCC41D9159AA0012C72A /* BRTMapNavigationButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1CBCC31D9159AA0012C72A /* BRTMapNavigationButton.m */; };
 		AA1F3D681C83665900393903 /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1F3D671C83665900393903 /* EXTScope.m */; };
 		AA254B8A1C7C8EB300D3A6C5 /* BRTLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA254B891C7C8EB300D3A6C5 /* BRTLoadingView.m */; };
 		AA254B8C1C7C8EC800D3A6C5 /* BRTLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA254B8B1C7C8EC800D3A6C5 /* BRTLoadingView.xib */; };
 		AA254B8F1C7C905200D3A6C5 /* BRTNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AA254B8E1C7C905200D3A6C5 /* BRTNetManager.m */; };
-		AA254B921C7C91F900D3A6C5 /* BRTBaseNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AA254B911C7C91F900D3A6C5 /* BRTBaseNetManager.m */; };
-		AA254B951C7D060300D3A6C5 /* BRTRestaurnatsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AA254B941C7D060300D3A6C5 /* BRTRestaurnatsManager.m */; };
+		AA254B951C7D060300D3A6C5 /* BRTRestaurantsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AA254B941C7D060300D3A6C5 /* BRTRestaurantsManager.m */; };
 		AA254B981C7D097900D3A6C5 /* BRTRestaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = AA254B971C7D097900D3A6C5 /* BRTRestaurant.m */; };
 		AA254B9B1C7D09CC00D3A6C5 /* BRTContact.m in Sources */ = {isa = PBXBuildFile; fileRef = AA254B9A1C7D09CC00D3A6C5 /* BRTContact.m */; };
 		AA254B9E1C7D0A0900D3A6C5 /* BRTLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = AA254B9D1C7D0A0900D3A6C5 /* BRTLocation.m */; };
 		AA2B81321C81CB260011CFBB /* BRTDataLoadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2B81311C81CB260011CFBB /* BRTDataLoadManager.m */; };
-		AA2B81351C81CE7F0011CFBB /* BRTReusavleCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2B81341C81CE7F0011CFBB /* BRTReusavleCollectionViewCell.m */; };
+		AA2B81351C81CE7F0011CFBB /* BRTReusableCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2B81341C81CE7F0011CFBB /* BRTReusableCollectionViewCell.m */; };
 		AA2B81381C81D3B50011CFBB /* UIViewController+BRTAutorotate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2B81371C81D3B50011CFBB /* UIViewController+BRTAutorotate.m */; };
-		AA3345651C80FA890031527F /* BRTLocationWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3345641C80FA890031527F /* BRTLocationWorker.m */; };
+		AA3345651C80FA890031527F /* BRTLocationGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3345641C80FA890031527F /* BRTLocationGetter.m */; };
 		AA33FB521C7E5A1C00FEBC83 /* BRTLunchDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA33FB511C7E5A1C00FEBC83 /* BRTLunchDetailViewController.m */; };
 		AA33FB551C7E5B0300FEBC83 /* BRTMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA33FB541C7E5B0300FEBC83 /* BRTMapViewController.m */; };
 		AA3534991C7B7F8C00304545 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3534981C7B7F8C00304545 /* main.m */; };
@@ -37,6 +37,7 @@
 		AA3534BF1C7BAC8000304545 /* BRTLunchCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3534BD1C7BAC8000304545 /* BRTLunchCollectionViewCell.m */; };
 		AA3534C01C7BAC8000304545 /* BRTLunchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA3534BE1C7BAC8000304545 /* BRTLunchCollectionViewCell.xib */; };
 		AA3534C21C7BACA500304545 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA3534C11C7BACA500304545 /* Media.xcassets */; };
+		AA396F481D91679B00CDE4E8 /* UIDevice+BRTCalls.m in Sources */ = {isa = PBXBuildFile; fileRef = AA396F471D91679B00CDE4E8 /* UIDevice+BRTCalls.m */; };
 		AAFC2EB21C7F9C5C00F25A38 /* BRTWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFC2EB11C7F9C5C00F25A38 /* BRTWebViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,8 @@
 		11BE91AA4361698521A716A7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		1E488C9787E0EEAB5848E1DC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		904C270524C65F8827A793C0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		AA1CBCC21D9159AA0012C72A /* BRTMapNavigationButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRTMapNavigationButton.h; sourceTree = "<group>"; };
+		AA1CBCC31D9159AA0012C72A /* BRTMapNavigationButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRTMapNavigationButton.m; sourceTree = "<group>"; };
 		AA1F3D661C83665900393903 /* EXTScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXTScope.h; path = libextobjc/extobjc/EXTScope.h; sourceTree = "<group>"; };
 		AA1F3D671C83665900393903 /* EXTScope.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXTScope.m; path = libextobjc/extobjc/EXTScope.m; sourceTree = "<group>"; };
 		AA254B881C7C8EB300D3A6C5 /* BRTLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRTLoadingView.h; sourceTree = "<group>"; };
@@ -51,10 +54,8 @@
 		AA254B8B1C7C8EC800D3A6C5 /* BRTLoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BRTLoadingView.xib; sourceTree = "<group>"; };
 		AA254B8D1C7C905200D3A6C5 /* BRTNetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRTNetManager.h; sourceTree = "<group>"; };
 		AA254B8E1C7C905200D3A6C5 /* BRTNetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRTNetManager.m; sourceTree = "<group>"; };
-		AA254B901C7C91F900D3A6C5 /* BRTBaseNetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRTBaseNetManager.h; sourceTree = "<group>"; };
-		AA254B911C7C91F900D3A6C5 /* BRTBaseNetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRTBaseNetManager.m; sourceTree = "<group>"; };
-		AA254B931C7D060300D3A6C5 /* BRTRestaurnatsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRTRestaurnatsManager.h; sourceTree = "<group>"; };
-		AA254B941C7D060300D3A6C5 /* BRTRestaurnatsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRTRestaurnatsManager.m; sourceTree = "<group>"; };
+		AA254B931C7D060300D3A6C5 /* BRTRestaurantsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRTRestaurantsManager.h; sourceTree = "<group>"; };
+		AA254B941C7D060300D3A6C5 /* BRTRestaurantsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRTRestaurantsManager.m; sourceTree = "<group>"; };
 		AA254B961C7D097900D3A6C5 /* BRTRestaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRTRestaurant.h; sourceTree = "<group>"; };
 		AA254B971C7D097900D3A6C5 /* BRTRestaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRTRestaurant.m; sourceTree = "<group>"; };
 		AA254B991C7D09CC00D3A6C5 /* BRTContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRTContact.h; sourceTree = "<group>"; };
@@ -63,12 +64,12 @@
 		AA254B9D1C7D0A0900D3A6C5 /* BRTLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRTLocation.m; sourceTree = "<group>"; };
 		AA2B81301C81CB260011CFBB /* BRTDataLoadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRTDataLoadManager.h; sourceTree = "<group>"; };
 		AA2B81311C81CB260011CFBB /* BRTDataLoadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRTDataLoadManager.m; sourceTree = "<group>"; };
-		AA2B81331C81CE7F0011CFBB /* BRTReusavleCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRTReusavleCollectionViewCell.h; sourceTree = "<group>"; };
-		AA2B81341C81CE7F0011CFBB /* BRTReusavleCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRTReusavleCollectionViewCell.m; sourceTree = "<group>"; };
+		AA2B81331C81CE7F0011CFBB /* BRTReusableCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRTReusableCollectionViewCell.h; sourceTree = "<group>"; };
+		AA2B81341C81CE7F0011CFBB /* BRTReusableCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRTReusableCollectionViewCell.m; sourceTree = "<group>"; };
 		AA2B81361C81D3B50011CFBB /* UIViewController+BRTAutorotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BRTAutorotate.h"; sourceTree = "<group>"; };
 		AA2B81371C81D3B50011CFBB /* UIViewController+BRTAutorotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BRTAutorotate.m"; sourceTree = "<group>"; };
-		AA3345631C80FA890031527F /* BRTLocationWorker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRTLocationWorker.h; sourceTree = "<group>"; };
-		AA3345641C80FA890031527F /* BRTLocationWorker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRTLocationWorker.m; sourceTree = "<group>"; };
+		AA3345631C80FA890031527F /* BRTLocationGetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRTLocationGetter.h; sourceTree = "<group>"; };
+		AA3345641C80FA890031527F /* BRTLocationGetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRTLocationGetter.m; sourceTree = "<group>"; };
 		AA33FB501C7E5A1C00FEBC83 /* BRTLunchDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRTLunchDetailViewController.h; sourceTree = "<group>"; };
 		AA33FB511C7E5A1C00FEBC83 /* BRTLunchDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRTLunchDetailViewController.m; sourceTree = "<group>"; };
 		AA33FB531C7E5B0300FEBC83 /* BRTMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRTMapViewController.h; sourceTree = "<group>"; };
@@ -96,6 +97,8 @@
 		AA3534BD1C7BAC8000304545 /* BRTLunchCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRTLunchCollectionViewCell.m; sourceTree = "<group>"; };
 		AA3534BE1C7BAC8000304545 /* BRTLunchCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BRTLunchCollectionViewCell.xib; sourceTree = "<group>"; };
 		AA3534C11C7BACA500304545 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		AA396F461D91679B00CDE4E8 /* UIDevice+BRTCalls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+BRTCalls.h"; sourceTree = "<group>"; };
+		AA396F471D91679B00CDE4E8 /* UIDevice+BRTCalls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+BRTCalls.m"; sourceTree = "<group>"; };
 		AAFC2EB01C7F9C5C00F25A38 /* BRTWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRTWebViewController.h; sourceTree = "<group>"; };
 		AAFC2EB11C7F9C5C00F25A38 /* BRTWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRTWebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,8 +167,6 @@
 		AA2B813F1C8207B80011CFBB /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				AA254B901C7C91F900D3A6C5 /* BRTBaseNetManager.h */,
-				AA254B911C7C91F900D3A6C5 /* BRTBaseNetManager.m */,
 				AA254B8D1C7C905200D3A6C5 /* BRTNetManager.h */,
 				AA254B8E1C7C905200D3A6C5 /* BRTNetManager.m */,
 			);
@@ -175,8 +176,8 @@
 		AA2B81401C8207C10011CFBB /* Location */ = {
 			isa = PBXGroup;
 			children = (
-				AA3345631C80FA890031527F /* BRTLocationWorker.h */,
-				AA3345641C80FA890031527F /* BRTLocationWorker.m */,
+				AA3345631C80FA890031527F /* BRTLocationGetter.h */,
+				AA3345641C80FA890031527F /* BRTLocationGetter.m */,
 			);
 			name = Location;
 			sourceTree = "<group>";
@@ -186,8 +187,8 @@
 			children = (
 				AA2B81301C81CB260011CFBB /* BRTDataLoadManager.h */,
 				AA2B81311C81CB260011CFBB /* BRTDataLoadManager.m */,
-				AA254B931C7D060300D3A6C5 /* BRTRestaurnatsManager.h */,
-				AA254B941C7D060300D3A6C5 /* BRTRestaurnatsManager.m */,
+				AA254B931C7D060300D3A6C5 /* BRTRestaurantsManager.h */,
+				AA254B941C7D060300D3A6C5 /* BRTRestaurantsManager.m */,
 			);
 			name = "Data Adapter";
 			sourceTree = "<group>";
@@ -201,6 +202,8 @@
 				AA254B9D1C7D0A0900D3A6C5 /* BRTLocation.m */,
 				AA254B961C7D097900D3A6C5 /* BRTRestaurant.h */,
 				AA254B971C7D097900D3A6C5 /* BRTRestaurant.m */,
+				AA396F461D91679B00CDE4E8 /* UIDevice+BRTCalls.h */,
+				AA396F471D91679B00CDE4E8 /* UIDevice+BRTCalls.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -213,11 +216,13 @@
 				AA254B881C7C8EB300D3A6C5 /* BRTLoadingView.h */,
 				AA254B891C7C8EB300D3A6C5 /* BRTLoadingView.m */,
 				AA254B8B1C7C8EC800D3A6C5 /* BRTLoadingView.xib */,
-				AA2B81331C81CE7F0011CFBB /* BRTReusavleCollectionViewCell.h */,
-				AA2B81341C81CE7F0011CFBB /* BRTReusavleCollectionViewCell.m */,
+				AA2B81331C81CE7F0011CFBB /* BRTReusableCollectionViewCell.h */,
+				AA2B81341C81CE7F0011CFBB /* BRTReusableCollectionViewCell.m */,
 				AA3534BC1C7BAC8000304545 /* BRTLunchCollectionViewCell.h */,
 				AA3534BD1C7BAC8000304545 /* BRTLunchCollectionViewCell.m */,
 				AA3534BE1C7BAC8000304545 /* BRTLunchCollectionViewCell.xib */,
+				AA1CBCC21D9159AA0012C72A /* BRTMapNavigationButton.h */,
+				AA1CBCC31D9159AA0012C72A /* BRTMapNavigationButton.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -422,8 +427,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA396F481D91679B00CDE4E8 /* UIDevice+BRTCalls.m in Sources */,
 				AA3534B21C7B84D100304545 /* BRTRootTabBarController.m in Sources */,
-				AA3345651C80FA890031527F /* BRTLocationWorker.m in Sources */,
+				AA3345651C80FA890031527F /* BRTLocationGetter.m in Sources */,
+				AA1CBCC41D9159AA0012C72A /* BRTMapNavigationButton.m in Sources */,
 				AA1F3D681C83665900393903 /* EXTScope.m in Sources */,
 				AA3534B91C7BA14300304545 /* BRTCustomNavigationController.m in Sources */,
 				AA254B9B1C7D09CC00D3A6C5 /* BRTContact.m in Sources */,
@@ -431,8 +438,8 @@
 				AA35349C1C7B7F8C00304545 /* AppDelegate.m in Sources */,
 				AA254B8F1C7C905200D3A6C5 /* BRTNetManager.m in Sources */,
 				AA33FB551C7E5B0300FEBC83 /* BRTMapViewController.m in Sources */,
-				AA2B81351C81CE7F0011CFBB /* BRTReusavleCollectionViewCell.m in Sources */,
-				AA254B951C7D060300D3A6C5 /* BRTRestaurnatsManager.m in Sources */,
+				AA2B81351C81CE7F0011CFBB /* BRTReusableCollectionViewCell.m in Sources */,
+				AA254B951C7D060300D3A6C5 /* BRTRestaurantsManager.m in Sources */,
 				AA254B8A1C7C8EB300D3A6C5 /* BRTLoadingView.m in Sources */,
 				AA33FB521C7E5A1C00FEBC83 /* BRTLunchDetailViewController.m in Sources */,
 				AA2B81321C81CB260011CFBB /* BRTDataLoadManager.m in Sources */,
@@ -441,7 +448,6 @@
 				AAFC2EB21C7F9C5C00F25A38 /* BRTWebViewController.m in Sources */,
 				AA2B81381C81D3B50011CFBB /* UIViewController+BRTAutorotate.m in Sources */,
 				AA3534B61C7B9F0A00304545 /* BRTCustomTabBar.m in Sources */,
-				AA254B921C7C91F900D3A6C5 /* BRTBaseNetManager.m in Sources */,
 				AA254B981C7D097900D3A6C5 /* BRTRestaurant.m in Sources */,
 				AA254B9E1C7D0A0900D3A6C5 /* BRTLocation.m in Sources */,
 			);

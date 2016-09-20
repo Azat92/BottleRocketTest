@@ -8,7 +8,11 @@
 
 #import "BRTLunchDetailViewController.h"
 #import "BRTMapViewController.h"
-#import "BRTLocationWorker.h"
+#import "BRTLocationGetter.h"
+#import "UIDevice+BRTCalls.h"
+
+static CGFloat const MIN_MAP_HEIGHT = 180;
+static CGFloat const MAX_MAP_HEIGHT = 400;
 
 @interface BRTLunchDetailViewController () <UIScrollViewDelegate, MKMapViewDelegate>
 
@@ -32,10 +36,10 @@
     [self.mapView showAnnotations:self.mapView.annotations animated:NO];
     self.nameLabel.text = self.restaurant.name;
     self.categoryLabel.text = self.restaurant.category;
-    self.addressLabel.text = [self.restaurant.location.formattedAddress componentsJoinedByString:@", "];
+    self.addressLabel.text = self.restaurant.location.fullAddress;
     [self.phoneButton setTitle:self.restaurant.contact.formattedPhone forState:UIControlStateNormal];
     self.phoneButton.enabled = self.restaurant.contact.havePhone;
-    self.phoneButton.userInteractionEnabled = !IS_IPAD;
+    self.phoneButton.userInteractionEnabled = [UIDevice canMakePhoneCall:self.restaurant.contact.phone];
     self.twitterLabel.text = self.restaurant.contact.twitter;
 }
 
@@ -52,7 +56,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"ShowOnMapSegue"])
+    if ([segue.identifier isEqualToString:SHOW_ON_MAP_SEGUE])
     {
         UINavigationController *nvc = segue.destinationViewController;
         BRTMapViewController *dvc = nvc.viewControllers.firstObject;
@@ -64,8 +68,8 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    scrollView.contentOffset = CGPointMake(scrollView.contentOffset.x, MAX(scrollView.contentOffset.y, -400));
-    self.mapHeightConstraint.constant = MAX(180, 180 - scrollView.contentOffset.y);
+    scrollView.contentOffset = CGPointMake(scrollView.contentOffset.x, MAX(scrollView.contentOffset.y, -MAX_MAP_HEIGHT));
+    self.mapHeightConstraint.constant = MAX(MIN_MAP_HEIGHT, MIN_MAP_HEIGHT - scrollView.contentOffset.y);
 }
 
 #pragma mark - Map View Delegate
@@ -74,16 +78,12 @@
 {
     if (annotation == self.restaurant)
     {
-        static NSString *viewIdentifier = @"RestaurantViewIdentifier";
-        MKAnnotationView *view = [mapView dequeueReusableAnnotationViewWithIdentifier:viewIdentifier];
+        MKAnnotationView *view = [mapView dequeueReusableAnnotationViewWithIdentifier:MAP_ANNOTATION_IDENTIFIER];
         if (!view)
         {
-            view = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:viewIdentifier];
+            view = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:MAP_ANNOTATION_IDENTIFIER];
             view.canShowCallout = YES;
-            UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-            [button setImage:[UIImage imageNamed:@"btn_mapNavigate"] forState:UIControlStateNormal];
-            [button sizeToFit];
-            view.rightCalloutAccessoryView = button;
+            view.rightCalloutAccessoryView = [BRTMapNavigationButton readyToGoButton];
         }
         return view;
     }

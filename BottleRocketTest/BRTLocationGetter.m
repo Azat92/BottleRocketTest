@@ -6,22 +6,22 @@
 //  Copyright © 2016 Azat Almeev. All rights reserved.
 //
 
-#import "BRTLocationWorker.h"
+#import "BRTLocationGetter.h"
 @import MapKit;
 
-@interface BRTLocationWorker () <CLLocationManagerDelegate>
+@interface BRTLocationGetter () <CLLocationManagerDelegate>
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
 
 @end
 
-@implementation BRTLocationWorker
+@implementation BRTLocationGetter
 
-static BRTLocationWorker *locationWorker;
+static BRTLocationGetter *locationWorker;
 
 + (void)requestPermissions
 {
-    locationWorker = [BRTLocationWorker new];
+    locationWorker = [BRTLocationGetter new];
     CLLocationManager *locationManager = [CLLocationManager new];
     locationManager.delegate = locationWorker;
     [locationManager requestWhenInUseAuthorization];

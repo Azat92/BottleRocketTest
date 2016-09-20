@@ -6,7 +6,7 @@
 //  Copyright © 2016 Azat Almeev. All rights reserved.
 //
 
-#import "BRTBaseNetManager.h"
+#import <Foundation/Foundation.h>
 
 typedef id (^BRTNetManagerPreprocess)(id JSONData, NSError *error);
 typedef void (^BRTNetManagerCompletion)(NSError *error, id JSONData);
@@ -20,7 +20,7 @@ typedef enum : NSUInteger
     BRTNetManagerMethodDELETE
 } BRTNetManagerMethod;
 
-@interface BRTNetManager : BRTBaseNetManager
+@interface BRTNetManager : NSObject
 
 + (void)sendRequestWithPath:(NSString *)path method:(BRTNetManagerMethod)method parameters:(NSDictionary *)parameters preprocess:(BRTNetManagerPreprocess)preprocess completion:(BRTNetManagerCompletion)completion;
 

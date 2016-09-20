@@ -18,16 +18,17 @@ typedef enum : NSUInteger
 
 @protocol BRTLoadingViewDelegate <NSObject>
 
-- (void)loadingViewDidCLickRetryButton:(BRTLoadingView *)loadingView;
+- (void)loadingViewDidClickRetryButton:(BRTLoadingView *)loadingView;
 
 @end
 
 @interface BRTLoadingView : UIView
 
-@property (nonatomic, assign) BRTLoadingViewMode mode;
-@property (nonatomic, copy) NSString *statusText;
+@property (nonatomic, readonly) BRTLoadingViewMode mode;
+@property (nonatomic, readonly) NSString *statusText;
 @property (nonatomic, weak) id <BRTLoadingViewDelegate> delegate;
 
 + (instancetype)viewFromXib;
+- (void)setErrorWithStatusText:(NSString *)text;
 
 @end

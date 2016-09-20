@@ -24,4 +24,8 @@
               @"state" : @"state" };
 }
 
+- (NSString *)fullAddress {
+    return [self.formattedAddress componentsJoinedByString:@", "];
+}
+
 @end

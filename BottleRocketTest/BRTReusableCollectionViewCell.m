@@ -6,9 +6,9 @@
 //  Copyright © 2016 Azat Almeev. All rights reserved.
 //
 
-#import "BRTReusavleCollectionViewCell.h"
+#import "BRTReusableCollectionViewCell.h"
 
-@implementation BRTReusavleCollectionViewCell
+@implementation BRTReusableCollectionViewCell
 
 + (NSString *)selfName
 {

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BRTReusavleCollectionViewCell : UICollectionViewCell
+@interface BRTReusableCollectionViewCell : UICollectionViewCell
 
 @property (nonatomic, strong) id model;
 

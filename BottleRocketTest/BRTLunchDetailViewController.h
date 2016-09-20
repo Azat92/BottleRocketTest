@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "BRTRestaurant.h"
 
+static NSString * const SHOW_ON_MAP_SEGUE = @"ShowOnMapSegue";
+
 @interface BRTLunchDetailViewController : UIViewController
 
 @property (nonatomic, strong) BRTRestaurant *restaurant;

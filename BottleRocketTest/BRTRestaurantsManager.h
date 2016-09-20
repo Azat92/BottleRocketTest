@@ -9,6 +9,6 @@
 #import "BRTRestaurant.h"
 #import "BRTDataLoadManager.h"
 
-@interface BRTRestaurnatsManager : BRTDataLoadManager
+@interface BRTRestaurantsManager : BRTDataLoadManager
 
 @end

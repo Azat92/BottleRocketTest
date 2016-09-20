@@ -7,7 +7,7 @@
 //
 
 #import "BRTMapViewController.h"
-#import "BRTLocationWorker.h"
+#import "BRTLocationGetter.h"
 
 @interface BRTMapViewController () <MKMapViewDelegate>
 
@@ -22,7 +22,7 @@
 {
     NSParameterAssert(self.markers != nil);
     [super viewDidLoad];
-    [BRTLocationWorker requestPermissions];
+    [BRTLocationGetter requestPermissions];
     self.mapView.showsUserLocation = YES;
     [self.mapView addAnnotations:self.markers];
     [self.mapView showAnnotations:self.mapView.annotations animated:NO];
@@ -48,18 +48,14 @@
 {
     if (annotation != self.mapView.userLocation)
     {
-        static NSString *viewIdentifier = @"RestaurantViewIdentifier";
-        MKAnnotationView *view = [mapView dequeueReusableAnnotationViewWithIdentifier:viewIdentifier];
+        MKAnnotationView *view = [mapView dequeueReusableAnnotationViewWithIdentifier:MAP_ANNOTATION_IDENTIFIER];
         if (!view)
         {
-            view = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:viewIdentifier];
+            view = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:MAP_ANNOTATION_IDENTIFIER];
             view.canShowCallout = YES;
             if (self.delegate)
             {
-                UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-                [button setImage:[UIImage imageNamed:@"btn_mapNavigate"] forState:UIControlStateNormal];
-                [button sizeToFit];
-                view.rightCalloutAccessoryView = button;
+                view.rightCalloutAccessoryView = [BRTMapNavigationButton readyToGoButton];
             }
         }
         return view;

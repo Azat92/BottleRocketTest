@@ -6,10 +6,12 @@
 //  Copyright © 2016 Azat Almeev. All rights reserved.
 //
 
-#import "BRTReusavleCollectionViewCell.h"
+#import "BRTReusableCollectionViewCell.h"
 #import "BRTRestaurant.h"
 
-@interface BRTLunchCollectionViewCell : BRTReusavleCollectionViewCell
+static CGFloat const LUNCH_COLLECTION_CELL_HEIGHT = 180;
+
+@interface BRTLunchCollectionViewCell : BRTReusableCollectionViewCell
 
 @property (nonatomic, strong) BRTRestaurant *restaurant;
 

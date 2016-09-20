@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BRTMapNavigationButton.h"
 @import MapKit;
+
+static NSString * const MAP_ANNOTATION_IDENTIFIER = @"RestaurantViewIdentifier";
 
 @class BRTMapViewController;
 

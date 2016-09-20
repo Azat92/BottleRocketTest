@@ -9,15 +9,19 @@
 #import "BRTLunchViewController.h"
 #import "BRTLunchCollectionViewCell.h"
 #import "BRTLoadingView.h"
-#import "BRTRestaurnatsManager.h"
+#import "BRTRestaurantsManager.h"
 #import "BRTLunchDetailViewController.h"
 #import "BRTMapViewController.h"
+
+static NSInteger const COLUMNS_COUNT_FOR_REGULAR_WIDTH = 2;
+static NSInteger const COLUMNS_COUNT_FOR_COMPACT_WIDTH = 1;
+static NSString * const SHOW_RESTAURANT_SEGUE = @"ShowRestaurantSegue";
 
 @interface BRTLunchViewController () <BRTLoadingViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, BRTMapViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
-@property (nonatomic, readonly) BRTRestaurnatsManager *restaurantsManager;
+@property (nonatomic, readonly) BRTRestaurantsManager *restaurantsManager;
 
 @end
 
@@ -25,12 +29,12 @@
 
 @synthesize restaurantsManager = _restaurantsManager;
 
-- (BRTRestaurnatsManager *)restaurantsManager
+- (BRTRestaurantsManager *)restaurantsManager
 {
     if (!_restaurantsManager)
     {
         @weakify(self);
-        _restaurantsManager = [BRTRestaurnatsManager managerWithNewDataCallback:^(NSArray *items) {
+        _restaurantsManager = [BRTRestaurantsManager managerWithNewDataCallback:^(NSArray *items) {
             @strongify(self);
             self.collectionView.backgroundView = nil;
             self.navigationItem.rightBarButtonItem.enabled = YES;
@@ -48,8 +52,7 @@
             if (!self.restaurantsManager.items)
             {
                 BRTLoadingView *loadingView = (BRTLoadingView *)self.collectionView.backgroundView;
-                loadingView.mode = BRTLoadingViewModeError;
-                loadingView.statusText = error.localizedDescription;
+                [loadingView setErrorWithStatusText:error.localizedDescription];
             }
             else if (self.view.window)
             {
@@ -89,12 +92,12 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"ShowRestaurantSegue"])
+    if ([segue.identifier isEqualToString:SHOW_RESTAURANT_SEGUE])
     {
         BRTLunchDetailViewController *dvc = segue.destinationViewController;
         dvc.restaurant = sender;
     }
-    else if ([segue.identifier isEqualToString:@"ShowOnMapSegue"])
+    else if ([segue.identifier isEqualToString:SHOW_ON_MAP_SEGUE])
     {
         UINavigationController *nvc = segue.destinationViewController;
         BRTMapViewController *dvc = nvc.viewControllers.firstObject;
@@ -111,7 +114,7 @@
 
 #pragma mark - Loading View Delegate
 
-- (void)loadingViewDidCLickRetryButton:(BRTLoadingView *)loadingView
+- (void)loadingViewDidClickRetryButton:(BRTLoadingView *)loadingView
 {
     [self.restaurantsManager reloadData];
 }
@@ -134,15 +137,15 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSInteger divider = self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClassRegular ? 2 : 1;
-    return CGSizeMake(self.view.width / divider, 180);
+    NSInteger columnsCount = self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClassRegular ? COLUMNS_COUNT_FOR_REGULAR_WIDTH : COLUMNS_COUNT_FOR_COMPACT_WIDTH;
+    return CGSizeMake(self.view.width / columnsCount, LUNCH_COLLECTION_CELL_HEIGHT);
 }
 
 #pragma mark - Collection View Delegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"ShowRestaurantSegue" sender:self.restaurantsManager.items[indexPath.item]];
+    [self performSegueWithIdentifier:SHOW_RESTAURANT_SEGUE sender:self.restaurantsManager.items[indexPath.item]];
 }
 
 #pragma mark - Map View Controller Delegate
@@ -150,7 +153,7 @@
 - (void)mapViewController:(BRTMapViewController *)mapController didSelectMarker:(id<MKAnnotation>)marker
 {
     [self dismissViewControllerAnimated:YES completion:^{
-        [self performSegueWithIdentifier:@"ShowRestaurantSegue" sender:marker];
+        [self performSegueWithIdentifier:SHOW_RESTAURANT_SEGUE sender:marker];
     }];
 }
 

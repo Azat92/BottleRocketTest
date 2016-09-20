@@ -8,9 +8,27 @@
 
 #import "BRTNetManager.h"
 
-#define kBaseServerURL @"http://sandbox.bottlerocketapps.com/"
+static NSString * const BASE_SERVER_URL = @"http://sandbox.bottlerocketapps.com/";
+
+@interface BRTNetManager ()
+
+@property (nonatomic, retain, readonly) NSURLSession *session;
+
+@end
 
 @implementation BRTNetManager
+
+@synthesize session = _session;
+
+- (NSURLSession *)session
+{
+    if (!_session)
+    {
+        NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+        _session = [NSURLSession sessionWithConfiguration:config delegate:nil delegateQueue:[NSOperationQueue new]];
+    }
+    return _session;
+}
 
 + (instancetype)sharedInstance
 {
@@ -35,7 +53,7 @@
 
 + (void)sendRequestWithPath:(NSString *)path method:(BRTNetManagerMethod)method parameters:(NSDictionary *)parameters preprocess:(BRTNetManagerPreprocess)preprocess completion:(BRTNetManagerCompletion)completion
 {
-    NSURL *url = [kBaseServerURL.toURL URLByAppendingPathComponent:path];
+    NSURL *url = [BASE_SERVER_URL.toURL URLByAppendingPathComponent:path];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
     switch (method)
     {
@@ -82,6 +100,18 @@
             completion(error ?: NSErrorMakeString(@"Unrecognized response"), JSONData);
         }
     }];
+}
+
+- (void)sendRequest:(NSURLRequest *)request
+     preprocessData:(id (^)(NSData *, NSURLResponse *, NSError *))preprocess
+         completion:(void (^)(id, NSData *, NSURLResponse *, NSError *))completion
+{
+    [[self.session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        id processData = preprocess(data, response, error);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completion(processData, data, response, error);
+        });
+    }] resume];
 }
 
 @end
